@@ -1,1 +1,16 @@
+body {
+    background: radial-gradient(blue, orange);
+}
 
+
+#timer {
+    border: solid 2px blue;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+
+#start {
+    border-radius: 30%;
+    background: orange;
+}
