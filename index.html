@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Pomodoro technique!</title>
+    <title>Pomodorist!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/pomodorist.css">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/Pomodorist.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
@@ -16,17 +16,52 @@
         <h1>DO MORE AND HAVE FUN WITH TIME MANAGEMENT!</h1>
     </header>
     <main>
-        <div id="timer">
-            <button id="start" onclick="startTimer()">Start!</button>
+        <div id='work'>
+            Set work time:
+            <input type="number" value="25" id='workTime' />
+            <input type="button" value="+" onclick="plus('workTime')" />
+            <input type="button" value="-" onclick="minus('workTime')" />
         </div>
-        <!-- <img src="http://via.placeholder.com/400x400" /> -->
+        <div id='break'>
+            Set break time:
+            <input type="number" value="5" id='breakTime' />
+            <input type="button" value="+" onclick="plus('breakTime')" />
+            <input type="button" value="-" onclick="minus('breakTime')" />
+        </div>
+        <div>
+            <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <button id="startPause" onclick="startPause()">&#9658;&nbsp;Start</button>
+            <button onclick="reset()">&#8635;&nbsp;Reset</button>
+        </div>
+        <div>
+            Why Pomodoro?
+            <ol>
+                <li>WORK WITH TIME - NOT AGAINST IT</li>
+                <li>ELIMINATE BURNOUT</li>
+                <li>MANAGE DISTRACTIONS</li>
+                <li>CREATE A BETTER WORK / LIFE BALANCE</li>
+            </ol>
+        </div>
+        <div>
+            How It works?
+            <ol>
+                <li>CHOOSE A TASK YOU'D LIKE TO GET DONE</li>
+                <li>SET THE POMODORO FOR 25 MINUTES</li>
+                <li>WORK ON THE TASK UNTIL THE POMODORO RINGS</li>
+                <li>WHEN THE POMODORO RINGS, PUT A CHECKMARK ON A PAPER</li>
+                <li>TAKE A SHORT BREAK</li>
+                <li>EVERY 4 POMODOROS, TAKE A LONGER BREAK</li>
+            </ol>
+        </div>
+        <a href="https://cirillocompany.de/pages/pomodoro-technique" target="_blank">More about Pomodoro technique...</a>
     </main>
     <footer>
-        <p>&copy;Anchi 2017</p>
+        <audio src="http://tastyspleen.net/~quake2/baseq2/sound/ambient/ipanema.wav" id="myAlarm"></audio>
+        &copy;Anchi 2017
     </footer>
-    <script src="js/pomodorist.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/Pomodorist.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
