@@ -1,0 +1,63 @@
+body {
+    background: radial-gradient(#44DBFF, #52FFAD);
+    color: blue;
+}
+
+h1 {
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    background: lightblue;
+    color: blue;
+    width: 50px;
+}
+
+div,
+header,
+main,
+footer {
+    margin: 10px;
+}
+
+section {
+    float: left;
+}
+
+aside {
+    float: right;
+}
+
+footer {}
+
+#timerDiv {
+    border: solid 2px blue;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+
+#timer {
+    font-size: 60px;
+    text-align: center;
+}
+
+#startPause,
+#reset,
+.button {
+    border: 1px solid blue;
+    border-radius: 30%;
+    background: #52FFAD;
+    font-weight: bold;
+    color: blue;
+}
+
+.button {
+    width: 20px;
+}

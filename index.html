@@ -6,9 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/Pomodorist.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -16,48 +16,52 @@
         <h1>DO MORE AND HAVE FUN WITH TIME MANAGEMENT!</h1>
     </header>
     <main>
-        <div id='work'>
-            Set work time:
-            <input type="number" value="25" id='workTime' />
-            <input type="button" value="+" onclick="plus('workTime')" />
-            <input type="button" value="-" onclick="minus('workTime')" />
-        </div>
-        <div id='break'>
-            Set break time:
-            <input type="number" value="5" id='breakTime' />
-            <input type="button" value="+" onclick="plus('breakTime')" />
-            <input type="button" value="-" onclick="minus('breakTime')" />
-        </div>
-        <div>
-            <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <button id="startPause" onclick="startPause()">&#9658;&nbsp;Start</button>
-            <button onclick="reset()">&#8635;&nbsp;Reset</button>
-        </div>
-        <div>
-            Why Pomodoro?
-            <ol>
-                <li>WORK WITH TIME - NOT AGAINST IT</li>
-                <li>ELIMINATE BURNOUT</li>
-                <li>MANAGE DISTRACTIONS</li>
-                <li>CREATE A BETTER WORK / LIFE BALANCE</li>
-            </ol>
-        </div>
-        <div>
-            How It works?
-            <ol>
-                <li>CHOOSE A TASK YOU'D LIKE TO GET DONE</li>
-                <li>SET THE POMODORO FOR 25 MINUTES</li>
-                <li>WORK ON THE TASK UNTIL THE POMODORO RINGS</li>
-                <li>WHEN THE POMODORO RINGS, PUT A CHECKMARK ON A PAPER</li>
-                <li>TAKE A SHORT BREAK</li>
-                <li>EVERY 4 POMODOROS, TAKE A LONGER BREAK</li>
-            </ol>
-        </div>
-        <a href="https://cirillocompany.de/pages/pomodoro-technique" target="_blank">More about Pomodoro technique...</a>
+        <section>
+            <div id='work'>
+                <p>Set work time:</p>
+                <input type="button" value="+" onclick="plus('workTime')" class="button" />
+                <input type="number" value="25" id='workTime' onchange="getValue('workTime')" />
+                <input type="button" value="-" onclick="minus('workTime')" class="button" />
+            </div>
+            <div id='break'>
+                <p>Set break time:</p>
+                <input type="button" value="+" onclick="plus('breakTime')" class="button" />
+                <input type="number" value="5" id='breakTime' onchange="getValue('breakTime')" />
+                <input type="button" value="-" onclick="minus('breakTime')" class="button" />
+            </div>
+            <div id="timerDiv">
+                <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <button id="startPause" onclick="startPause()">&#9658;&nbsp;Start</button>
+                <button id="reset" onclick="reset()">&#8635;&nbsp;Reset</button>
+            </div>
+        </section>
+        <aside>
+            <div id="why">
+                <p>Why Pomodoro?</p>
+                <ol>
+                    <li>WORK WITH TIME - NOT AGAINST IT</li>
+                    <li>ELIMINATE BURNOUT</li>
+                    <li>MANAGE DISTRACTIONS</li>
+                    <li>CREATE A BETTER WORK / LIFE BALANCE</li>
+                </ol>
+            </div>
+            <div id="how">
+                <p>How It works?</p>
+                <ol>
+                    <li>CHOOSE A TASK YOU'D LIKE TO GET DONE</li>
+                    <li>SET THE POMODORO FOR 25 MINUTES</li>
+                    <li>WORK ON THE TASK UNTIL THE POMODORO RINGS</li>
+                    <li>WHEN THE POMODORO RINGS, PUT A CHECKMARK ON A PAPER</li>
+                    <li>TAKE A SHORT BREAK</li>
+                    <li>EVERY 4 POMODOROS, TAKE A LONGER BREAK</li>
+                </ol>
+            </div>
+        </aside>
     </main>
     <footer>
         <audio src="http://tastyspleen.net/~quake2/baseq2/sound/ambient/ipanema.wav" id="myAlarm"></audio>
-        &copy;Anchi 2017
+        <a href="https://cirillocompany.de/pages/pomodoro-technique" target="_blank">More about Pomodoro technique...</a>
+        <p>&copy;Anchi 2017</p>
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

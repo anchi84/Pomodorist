@@ -25,10 +25,9 @@ function minus(elid) {
     }
 }
 
-/*function getValue() {
-    workTime = document.getElementById('workTime').value;
-    breakTime = document.getElementById('breakTime').value;
-}*/
+function getValue(elid) {
+    time = document.getElementById(elid).value * 60;
+}
 
 function timer() {
     if (timerEnable) {
