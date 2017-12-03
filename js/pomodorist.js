@@ -1,11 +1,9 @@
 var workTime = document.getElementById('workTime').value;
 var breakTime = document.getElementById('breakTime').value;
-//var workTimeId = document.getElementById('workTime').id;
-//var breakTimeId = document.getElementById('breakTime').id;
 var timerEnable = false;
 var mode = 'work';
 var myAudio = document.getElementById("myAlarm");
-var count = 0;
+var count = 1;
 var time = workTime * 60;
 var myPomodoro;
 
@@ -39,24 +37,25 @@ function timer() {
                 count++;
             } else {
                 mode = 'work';
+                myAudio.play();
                 time = document.getElementById('workTime').value * 60;
                 count++;
             }
+            
+            if (count % 8 === 0) {
+              $('h1').html("Take a longer break!");
+            } else {
+              $('h1').html("DO MORE AND HAVE FUN WITH TIME MANAGEMENT!");
+            }
         }
-        /*if(count % 2 == 0) {
-        	time = workTime;
-        }
-        else {
-        	time = breakTime;
-        }*/
 
-        var minuts = Math.floor(time / 60);
+        var minutes = Math.floor(time / 60);
         var seconds = time % 60;
         if (seconds < 10)
             seconds = "0" + seconds;
-        if (minuts < 10)
-            minuts = "0" + minuts;
-        document.getElementById("timer").innerHTML = minuts + " : " + seconds;
+        if (minutes < 10)
+            minutes = "0" + minutes;
+        document.getElementById("timer").innerHTML = minutes + " : " + seconds;
         time--;
     }
 }
@@ -65,7 +64,7 @@ function startPause() {
     if (timerEnable === false) {
         myPomodoro = setInterval(timer, 1000);
         timerEnable = true;
-        $('#startPause').html("&#10073; &#10073; Pause");
+        $('#startPause').html("&#10073;&#10073;&nbsp;Pause");
     } else {
         clearInterval(myPomodoro);
         timerEnable = false;
@@ -80,9 +79,9 @@ function reset() {
     clearInterval(myPomodoro);
     time = 0;
     mode = 'break';
-    $('#timer').html("&nbsp;");
-    if (timerEnable == true) {
+    count = 0;
+    $('#timer').html("00 : 00");
+    if (timerEnable === true) {
         myPomodoro = setInterval(timer, 1000);
     }
-
 }

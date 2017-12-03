@@ -6,9 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/Pomodorist.css">
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Pomodorist.css">
 </head>
 
 <body>
@@ -19,18 +19,18 @@
         <section>
             <div id='work'>
                 <p>Set work time:</p>
-                <input type="button" value="+" onclick="plus('workTime')" class="button" />
-                <input type="number" value="25" id='workTime' onchange="getValue('workTime')" />
                 <input type="button" value="-" onclick="minus('workTime')" class="button" />
+                <input type="number" value="25" id='workTime' onchange="getValue('workTime')" />
+                <input type="button" value="+" onclick="plus('workTime')" class="button" />
             </div>
             <div id='break'>
                 <p>Set break time:</p>
-                <input type="button" value="+" onclick="plus('breakTime')" class="button" />
-                <input type="number" value="5" id='breakTime' onchange="getValue('breakTime')" />
                 <input type="button" value="-" onclick="minus('breakTime')" class="button" />
+                <input type="number" value="5" id='breakTime' onchange="getValue('breakTime')" />
+                <input type="button" value="+" onclick="plus('breakTime')" class="button" />
             </div>
             <div id="timerDiv">
-                <p id="timer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p id="timer">00 : 00</p>
                 <button id="startPause" onclick="startPause()">&#9658;&nbsp;Start</button>
                 <button id="reset" onclick="reset()">&#8635;&nbsp;Reset</button>
             </div>
@@ -56,11 +56,13 @@
                     <li>EVERY 4 POMODOROS, TAKE A LONGER BREAK</li>
                 </ol>
             </div>
+            <div>
+              <a href="https://cirillocompany.de/pages/pomodoro-technique" target="_blank">More about Pomodoro technique...</a>
+            </div>
         </aside>
     </main>
     <footer>
         <audio src="http://tastyspleen.net/~quake2/baseq2/sound/ambient/ipanema.wav" id="myAlarm"></audio>
-        <a href="https://cirillocompany.de/pages/pomodoro-technique" target="_blank">More about Pomodoro technique...</a>
         <p>&copy;Anchi 2017</p>
     </footer>
     <!-- Optional JavaScript -->
