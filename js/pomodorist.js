@@ -11,6 +11,7 @@ function plus(elid) {
     document.getElementById(elid).value++;
     if (!timerEnable) {
         time = document.getElementById(elid).value * 60;
+        setTimer();
     }
 }
 
@@ -19,12 +20,26 @@ function minus(elid) {
         document.getElementById(elid).value--;
         if (!timerEnable) {
             time = document.getElementById(elid).value * 60;
+            setTimer();
         }
     }
 }
 
 function getValue(elid) {
-    time = document.getElementById(elid).value * 60;
+    if (!timerEnable) {
+        time = document.getElementById(elid).value * 60;
+        setTimer();
+    }
+}
+
+function setTimer() {
+    var minutes = Math.floor(time / 60);
+    var seconds = time % 60;
+    if (seconds < 10)
+        seconds = "0" + seconds;
+    if (minutes < 10)
+        minutes = "0" + minutes;
+    document.getElementById("timer").innerHTML = minutes + " : " + seconds;
 }
 
 function timer() {
@@ -49,13 +64,7 @@ function timer() {
             }
         }
 
-        var minutes = Math.floor(time / 60);
-        var seconds = time % 60;
-        if (seconds < 10)
-            seconds = "0" + seconds;
-        if (minutes < 10)
-            minutes = "0" + minutes;
-        document.getElementById("timer").innerHTML = minutes + " : " + seconds;
+        setTimer();
         time--;
     }
 }
@@ -80,7 +89,7 @@ function reset() {
     time = 0;
     mode = 'break';
     count = 0;
-    $('#timer').html("00 : 00");
+    $('#timer').html("25 : 00");
     if (timerEnable === true) {
         myPomodoro = setInterval(timer, 1000);
     }
